@@ -1,0 +1,20 @@
+# Day 3
+Setting up a Honey Traps in AWS Account
+- HONEYTRAIL https://github.com/adanalvarez/HoneyTrail
+Summarising the GH page and overview of TOOL:
+- Can create 3 Services (S3, DynamoDB, Lambda, these services are monitored by CloudTrail. 
+- Event created and event will trigger a lambda
+
+Installing 
+- Install Terraform
+- modify the email to your own in configuration
+- S3 is being monitored as part of config
+- init terraform
+- terraform apply and deploy services from Github Clone (honeytrail), services are being created in AWS, resources added
+- SNS sends us a confirmation email
+- Nw we have an S3 bucket as a honeypot/trap
+- Go to your S3 bucket, and access the data bucket, and then access the CSV file, or download it. 
+*** This triggered Cloudtrail and received a notification in our email box (normally this can then trigger an incident)
+
+
+MY PROJECT SCREENSHOTS
