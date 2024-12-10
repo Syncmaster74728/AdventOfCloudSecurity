@@ -1,1 +1,9 @@
 Day #1 The Complete Senior Cloud Security Engineer Roadmap
+Key points:
+- Do not limit yourself to only 1 Public Cloud Provider
+- AI Security (becoming more paramount), and building and securing these services for AI is important (key RISKS), workloads for AI and how to build and secure
+- 3rd party Risk Management 
+- Posture Management SSPM / CSPM products understanding is key, think broadly i.e. i have 1000 alerts/detections, but which one's makes it specific to my environment. (expanding on your default)
+- Integrating with existing Cyber Security products, SOC team, Compliance team, Incident Response, for every threat you identify in your Cloud area, you have to understand the environment. Integrate the existing products and identify OVERLAP i.e. Vulnerability Management | End Point Security | DLP | IAM | PAM
+- Automation (leverage IaC, CICD, Security Detection, misconfigurations) various automations would be a key focus
+- SOFT SKILLS (MOST IMPORTANT), you have to communicate especially in the era of AI, where many things are automated, and technical tasks become less, the interpersonal skills and stakeholder relationships are becoming more key.
