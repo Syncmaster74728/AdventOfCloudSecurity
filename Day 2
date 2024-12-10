@@ -1,0 +1,5 @@
+# Day 2
+Top 3 Cloud Security Projects that give you anunfair advantage
+1) Create business specific threat detection (Many native tools or CSPM gives you alerts on threats etc and posture management), identify gaps left behind not covered in your INDUSTRY / UNIQUE to you. 
+2) Keeping up in AI / Cloud (for example Bedrock, OpenAI, Llama) find ways to secure these
+3) ID patterns and build for scale (integrate security, platforms build into the CICD pipeline), for instance new accounts created are automatically created and secured. Identify Vulnerabilities and identify if this is across your resources, and how broadly this is an issue across your area.
