@@ -16,5 +16,70 @@ Installing
 - Go to your S3 bucket, and access the data bucket, and then access the CSV file, or download it. 
 *** This triggered Cloudtrail and received a notification in our email box (normally this can then trigger an incident)
 
+There is also a Medium article if you want to read up more about HoneyTrail https://medium.com/@adan.alvarez/deterring-attackers-with-honeytrail-deploying-deception-in-aws-6b5977afa784
 
-MY PROJECT SCREENSHOTS
+MY PROJECT 
+1. Installing Teraform and cloning the repo 
+[cloudshell-user@ip-10-130-79-148 ~]$ git clone https://github.com/tfutils/tfenv.git ~/.tfenv && mkdir -p ~/bin && ln -s ~/.tfenv/bin/* ~/bin/ && export PATH="$HOME/bin:$PATH" && tfenv install 1.9.8 && tfenv use 1.9.8
+[cloudshell-user@ip-10-130-79-148 ~]$ git clone https://github.com/tfutils/tfenv.git ~/.tfenv && mkdir -p ~/bin && ln -s ~/.tfenv/bin/* ~/bin/ && export PATH="$HOME/bin:$PATH" && tfenv install 1.9.8 && tfenv use 1.9.8
+Cloning into '/home/cloudshell-user/.tfenv'...
+remote: Enumerating objects: 2062, done.
+remote: Counting objects: 100% (667/667), done.
+remote: Compressing objects: 100% (211/211), done.
+remote: Total 2062 (delta 518), reused 522 (delta 446), pack-reused 1395 (from 1)
+Receiving objects: 100% (2062/2062), 439.05 KiB | 6.27 MiB/s, done.
+Resolving deltas: 100% (1322/1322), done.
+Installing Terraform v1.9.8
+Downloading release tarball from https://releases.hashicorp.com/terraform/1.9.8/terraform_1.9.8_linux_amd64.zip
+######################################################################################################################################################################################################################################################### 100.0%
+Downloading SHA hash file from https://releases.hashicorp.com/terraform/1.9.8/terraform_1.9.8_SHA256SUMS
+Not instructed to use Local PGP (/home/cloudshell-user/.tfenv/use-{gpgv,gnupg}) & No keybase install found, skipping OpenPGP signature verification
+terraform_1.9.8_linux_amd64.zip: OK
+Archive:  /tmp/tfenv_download.IWZsKz/terraform_1.9.8_linux_amd64.zip
+  inflating: /home/cloudshell-user/.tfenv/versions/1.9.8/LICENSE.txt  
+  inflating: /home/cloudshell-user/.tfenv/versions/1.9.8/terraform  
+Installation of terraform v1.9.8 successful. To make this your default version, run 'tfenv use 1.9.8'
+Switching default version to v1.9.8
+Default version (when not overridden by .terraform-version or TFENV_TERRAFORM_VERSION) is now: 1.9.8
+[cloudshell-user@ip-10-130-79-148 ~]$ git clone https://github.com/adanalvarez/HoneyTrail/
+Cloning into 'HoneyTrail'...
+remote: Enumerating objects: 82, done.
+remote: Counting objects: 100% (82/82), done.
+remote: Compressing objects: 100% (75/75), done.
+remote: Total 82 (delta 29), reused 36 (delta 6), pack-reused 0 (from 0)
+Receiving objects: 100% (82/82), 10.25 MiB | 31.32 MiB/s, done.
+Resolving deltas: 100% (29/29), done.
+[cloudshell-user@ip-10-130-79-148 ~]$ 
+
+
+2. Change the config setting to my setup email for this training
+ "enable_s3_event_selector": true,
+    "enable_dynamodb_event_selector": false,
+    "enable_lambda_event_selector": false,
+    "enable_sns": true,
+    "destination_email": ""awsaliascantrill@gmail.com,
+    "source_email": "",
+    "vpnapi_key": "",
+    "ses_identities": [""]
+}
+3. Terraform apply to install all the configuration files including lambda, s3 etc 
+Apply complete! Resources: 24 added, 0 changed, 0 destroyed.
+[cloudshell-user@ip-10-130-79-148 HoneyTrail]$ 
+4. Went onto console to s3, entered the bucket, and opened users_data.csv as the áttacker'' on my own instances.
+5. Notification received via email 
+From: AWS Notifications <no-reply@sns.amazonaws.com>
+Date: Thu, 12 Dec 2024, 8:55 pm
+Subject: [AWS Honeytoken CloudTrail Alert] GetObject - s3.amazonaws.com
+To: <awsaliascantrill@gmail.com>
+
+
+Interaction with honeytoken
+
+Event: GetObject
+Event Source: s3.amazonaws.com
+
+User Identity: {'type': 'IAMUser', 'principalId': 'AIDA2UC3DHFBDFBLZ3KCH', 'arn': 'arn:aws:iam::730335492418:user/iamadmin', 'accountId': '730335492418', 'accessKeyId': 'ASIA2UC3DHFBO3RGMXWW', 'userName': 'iamadmin', 'sessionContext': {'attributes': {'creationDate': '2024-12-12T09:44:39Z', 'mfaAuthenticated': 'true'}}}
+
+Resources: [{'type': 'AWS::S3::Object', 'ARN': 'arn:aws:s3:::data-bucket-definite-sunfish-2a2fa96a4ab29971/users_data.csv'}, {'accountId': '730335492418', 'type': 'AWS::S3::Bucket', 'ARN': 'arn:aws:s3:::data-bucket-definite-sunfish-2a2fa96a4ab29971'}]
+
+6. Break down infrastructure with terraform destroy
