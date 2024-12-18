@@ -1,1 +1,9 @@
-#day 4
+#Day 4
+How to setup DevSecOps Pipeline for Amazon EKS with Terraform
+Requirements: https://github.com/The-DevSec-Blueprint/aws-devsecops-pipeline
+- VSCODE IDE (Use to walk around code)
+- GIT (To clone repo from GH)
+- Docker (build docker file locally)
+- Python (App build runs on)
+- Terraform (locally perform TFE plan through CMD / Powershell)
+- Snyk CLI (scanning code)
