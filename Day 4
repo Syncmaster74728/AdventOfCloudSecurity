@@ -7,3 +7,6 @@ Requirements: https://github.com/The-DevSec-Blueprint/aws-devsecops-pipeline
 - Python (App build runs on)
 - Terraform (locally perform TFE plan through CMD / Powershell)
 - Snyk CLI (scanning code)
+
+Theory:
+https://www.devsecblueprint.com/
