@@ -10,3 +10,14 @@ Requirements: https://github.com/The-DevSec-Blueprint/aws-devsecops-pipeline
 
 Theory:
 https://www.devsecblueprint.com/
+Key steps considered here:
+1. Concepts You'll Need To Know
+2. Building Application DevSecOps Pipelines
+3. Building Cloud DevSecOps Pipelines
+
+Concepts You'll Need To Know (Things i wanted to sharp up on included)
+A. Version Control System (GIT) - https://thedevops.guide/guide/version-control-system
+- Complete Git and GitHub Tutorial - https://www.youtube.com/watch?v=apGV9Kg7ics
+- Git and GitHub for Beginners - Crash Course - https://www.youtube.com/watch?v=RGOj5yH7evk
+- Git Branching - https://learngitbranching.js.org/
+
